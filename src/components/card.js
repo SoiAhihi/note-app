@@ -23,18 +23,14 @@ export default class CardHeaderFooterExample extends Component {
                 <View style={{
                                 borderRadius: 10, 
                                 padding: 15,
-                                backgroundColor: this.props.item.category_name == 'Work' ? '#C0EB6A' : 
-                                                (this.props.item.category_name == 'Learn' ? '#2FC2DF' : 
-                                                (this.props.item.category_name == 'Wishlist' ? '#FAD06C' : '#FF92A9'
-                                                ))
+                                backgroundColor:'#C0EB6A'  
+                                               
                             }}>
 
                     <Text numberOfLines={1} style={styles.title}>
                         {this.props.item.title}
                     </Text>
-                    <Text numberOfLines={1} style={styles.category}>
-                        {this.props.item.category_name}
-                    </Text>
+                    
                     <Text numberOfLines={5} style={styles.note}>
                         {this.props.item.note}
                     </Text>
@@ -57,10 +53,6 @@ const styles = StyleSheet.create({
       fontSize: 23,
       fontWeight: 'bold',
       marginTop: 10,
-    },
-    category: {
-      fontSize: 15,
-      color: 'white',
     },
     note: {
         color: 'white',

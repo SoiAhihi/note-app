@@ -16,28 +16,10 @@ export default class AddNote extends Component {
 	constructor (props) {
 		super(props)
 		this.state = {
-			category: [
-				{
-					id: 1,
-					category_name: 'Personal',
-					image_url: 'https://img.icons8.com/ios-glyphs/90/000000/hand-with-pen.png'
-				},
-				{
-					id: 2,
-					category_name: 'Wishlist',
-					image_url: 'https://img.icons8.com/ios/90/000000/wish-list-filled.png'
-				},
-				{
-					id: 3,
-					category_name: 'Learn',
-					image_url: 'https://img.icons8.com/ios-glyphs/90/000000/machine-learning.png'
-				},
-				{
-					id: 4,
-					category_name: 'Work',
-					image_url: 'https://img.icons8.com/ios-glyphs/90/000000/check.png'
-				},
-			],
+			node:{"title": "",
+				"note": "",
+				"category_name": ""}
+			
 		}
 	}
 
@@ -50,40 +32,35 @@ export default class AddNote extends Component {
 	    headerRight: (
 	    	<TouchableOpacity style={{marginRight: 15}}>
 	    		<Image 
-	    			source={require('../assets/icons/checked.png')}
+					source={require('../assets/icons/checked.png')}
+					onPress={this.handleNavigation}
 	    		/>
 	    	</TouchableOpacity>
 	    ),
 	};
-
+	handleNavigation = () => {
+		this.state.node.category_name = document.getElementById(txtname1).value
+		
+		this.state.node.value = document.getElementById(txtname2).value
+        return <Redirect to ={referer} />
+    	
+	}
 	render() {
 		return(
 			<ScrollView style={styles.ParentView}>
 				<TextInput
+					id="txtname1"
 					style={styles.title} 
 					placeholder="ADD TITLE ..." 
 				/>
 				<TextInput 
+					id="txtname2"
 					style={styles.description}
 					multiline= {true}
 					numberOfLines={10}
 					placeholder="ADD DESCRIPTION ..." 
+					
 				/>
-				<Picker
-					style={styles.picker}
-					selectedValue={this.state.selectedCategory}
-					style={{height: 50, width: '100%'}}
-					onValueChange={(itemValue, itemIndex) =>
-						this.setState({selectedCategory: itemValue})
-					}>
-					{
-					  	this.state.category.map((item) => {
-					  		return(
-					  			<Picker.Item key={item.id} label={item.category_name} value={item.id} />
-					  		)
-					  	})
-					  }
-				</Picker>
 				<View style={{height: 100}} />
 			</ScrollView>
 		)

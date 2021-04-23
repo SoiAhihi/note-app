@@ -25,7 +25,6 @@ class Home extends Component {
 			"id": 0,
 			"title": "React Redux",
 			"note": "React Redux is the official React binding for Redux. It lets your React components read data from a Redux store, and dispatch actions to the store to update data.",
-			"category_name": "Wishlist"
 			}
 			
 		]
