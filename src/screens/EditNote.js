@@ -38,13 +38,6 @@ export default class EditNote extends Component {
 	    	textAlign: 'center',
 	    	flexGrow: 1,
 	    },
-	    headerRight: (
-	    	<TouchableOpacity style={{marginRight: 15}}>
-	    		<Image 
-	    			source={require('../assets/icons/checked.png')}
-	    		/>
-	    	</TouchableOpacity>
-	    ),
 	};
 
 	render() {
