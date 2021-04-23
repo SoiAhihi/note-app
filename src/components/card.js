@@ -28,9 +28,7 @@ export default class CardHeaderFooterExample extends Component {
                                                 (this.props.item.category_name == 'Wishlist' ? '#FAD06C' : '#FF92A9'
                                                 ))
                             }}>
-                    <Text style={styles.date}>
-                        {moment(this.props.item.time).format('DD MMMM')}
-                    </Text>
+
                     <Text numberOfLines={1} style={styles.title}>
                         {this.props.item.title}
                     </Text>
@@ -53,12 +51,6 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         margin: 13,
         flex: 1,   
-    },
-    date: {
-        color: 'white',
-        fontSize: 15,
-        fontWeight: 'bold',
-        alignSelf: 'flex-end'
     },
     title: {
       color: 'white',

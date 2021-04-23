@@ -22,10 +22,9 @@ class Home extends Component {
 	state = {
 		notes: [
 			{
-			"id": 8,
+			"id": 0,
 			"title": "React Redux",
 			"note": "React Redux is the official React binding for Redux. It lets your React components read data from a Redux store, and dispatch actions to the store to update data.",
-			"time": "2019-07-02T10:08:18.000Z",
 			"category_name": "Wishlist"
 			}
 			
